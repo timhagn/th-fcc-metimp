@@ -12,6 +12,10 @@ var runner            = require('./test-runner');
 
 var app = express();
 
+// Add helmet() to prevent MIME type & XSS attacks.
+const helmet = require('helmet');
+app.use(helmet());
+
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only

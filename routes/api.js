@@ -32,7 +32,8 @@ module.exports = function (app) {
         returnUnit,
         'string': toString
       };
-      console.log(returnObject, initNum, initUnit);
+      // Only for debugging purposes:
+      // console.log(returnObject, initNum, initUnit);
       if (initNum !== invalidNumber && initUnit !== invalidUnit) {
         res.json(returnObject);
       }
